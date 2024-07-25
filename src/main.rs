@@ -45,7 +45,7 @@ fn main() {
         println!("2.Sistema Marca");
         println!("3.Sistema Modelo");
         println!("4.Sistema Vehiculos");
-        println!("5.Sistema Compra y Venta");
+        println!("5.Sistema Compra");
         println!("6.salir");
 
         let mut input = String::new();
@@ -88,6 +88,10 @@ fn main() {
                         }
                         2 => {
                             println!("Ingrese el índice del color a eliminar (comenzando desde 0):");
+                            println!("Colores actuales:");
+                            for (i, color) in colores.iter().enumerate() {
+                                println!("{}: {}", i, color.nombre);
+                            }
                             let mut index_str = String::new();
                             io::stdin()
                                 .read_line(&mut index_str)
@@ -143,6 +147,10 @@ fn main() {
                     }
                     2 => {
                         println!("Ingrese el índice de la marca a eliminar (comenzando desde 0):");
+                        println!("Marcas actuales:");
+                        for (i, marca) in marcas.iter().enumerate() {
+                            println!("{}: {}", i, marca.nombre);
+                        }
                         let mut index_str = String::new();
                         io::stdin()
                             .read_line(&mut index_str)
@@ -187,6 +195,10 @@ fn main() {
                             .read_line(&mut modelo_nombre)
                             .expect("Error al leer la entrada");
                         println!("Ingrese la marca del modelo (asegúrese de que exista):");
+                        println!("Marcas actuales:");
+                        for (i, marca) in marcas.iter().enumerate() {
+                            println!("{}: {}", i, marca.nombre);
+                        }
                         let mut marca_modelo = String::new();
                         io::stdin()
                             .read_line(&mut marca_modelo)
@@ -213,6 +225,10 @@ fn main() {
                     }
                     2 => {
                         println!("Ingrese el índice del modelo a eliminar (comenzando desde 0):");
+                        println!("Modelos actuales:");
+                        for (i, modelo) in modelos.iter().enumerate() {
+                            println!("{}: {} ({})", i, modelo.nombre, modelo.marca);
+                        }
                         let mut index_str = String::new();
                         io::stdin()
                             .read_line(&mut index_str)
@@ -252,18 +268,30 @@ fn main() {
                     match choice {
                         1 => {
                             println!("Ingrese el modelo del vehículo:");
+                            println!("Modelos Disponibles:");
+                        for (i, modelo) in modelos.iter().enumerate() {
+                            println!("{}: {} ({})", i, modelo.nombre, modelo.marca);
+                        }
                             let mut modelo_nombre = String::new();
                             io::stdin()
                                 .read_line(&mut modelo_nombre)
                                 .expect("Error al leer la entrada");
             
                             println!("Ingrese la marca del vehículo:");
+                            println!("Marcas actuales:");
+                        for (i, marca) in marcas.iter().enumerate() {
+                            println!("{}: {}", i, marca.nombre);
+                        }
                             let mut marca_nombre = String::new();
                             io::stdin()
                                 .read_line(&mut marca_nombre)
                                 .expect("Error al leer la entrada");
             
                             println!("Ingrese el color del vehículo:");
+                            println!("Colores Disponibles:");
+                            for (i, color) in colores.iter().enumerate() {
+                                println!("{}: {}", i, color.nombre);
+                            }
                             let mut color_nombre = String::new();
                             io::stdin()
                                 .read_line(&mut color_nombre)
@@ -301,6 +329,10 @@ fn main() {
                         }
                         3 => {
                             println!("Ingrese el índice del vehículo a eliminar (comenzando desde 0):");
+                            println!("Vehículos actuales:");
+                            for (i, vehiculo) in vehiculos.iter().enumerate() {
+                                println!("{}: {} {} {} $ {:.2}", i, vehiculo.marca, vehiculo.modelo, vehiculo.color, vehiculo.precio);
+                            }
                             let mut index_str = String::new();
                             io::stdin().read_line(&mut index_str).expect("Error al leer la entrada");
                             let index: usize = index_str.trim().parse().expect("Por favor ingrese un índice válido");
@@ -320,7 +352,7 @@ fn main() {
                 println!("Selecciona una opción:");
                 println!("1. Ver vehículos disponibles");
                 println!("2. Comprar vehículo");
-                println!("3. Ver historial de ventas");
+                println!("3. Ver historial de Compras");
                 println!("4. Salir");
         
                 let mut input = String::new();
@@ -338,6 +370,10 @@ fn main() {
                     }
                     2 => {
                         println!("Ingrese el índice del vehículo a comprar:");
+                        println!("Vehículos disponibles:");
+                        for (i, vehiculo) in vehiculos.iter().enumerate() {
+                            println!("{}: {} {} {} $ {:.2}", i, vehiculo.marca, vehiculo.modelo, vehiculo.color, vehiculo.precio);
+                        }
                         let mut index_str = String::new();
                         io::stdin()
                             .read_line(&mut index_str)
