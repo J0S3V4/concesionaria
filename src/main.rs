@@ -192,7 +192,7 @@ fn main() {
                             .read_line(&mut marca_modelo)
                             .expect("Error al leer la entrada");
         
-                        // Verificar si la marca existe
+                        
                         let marca_existe = marcas.iter().any(|m| m.nombre == marca_modelo.trim());
                         if marca_existe {
                             let nuevo_modelo = Modelo {
@@ -200,7 +200,7 @@ fn main() {
                                 marca: marca_modelo.trim().to_string(),
                             };
         
-                            // Verificar si el modelo ya existe
+                           
                             if !modelos.contains(&nuevo_modelo) {
                                 modelos.push(nuevo_modelo);
                                 println!("Modelo agregado exitosamente.");
