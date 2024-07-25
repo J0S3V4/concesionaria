@@ -276,7 +276,7 @@ fn main() {
                                 .expect("Error al leer la entrada");
                             let precio: f64 = precio_str.trim().parse().expect("Error al parsear el precio");
             
-                            // Verificar existencia
+                           
                             let modelo_existe = modelos.iter().any(|m| m.nombre == modelo_nombre.trim() && m.marca == marca_nombre.trim());
                             let color_existe = colores.iter().any(|c| c.nombre == color_nombre.trim());
             
