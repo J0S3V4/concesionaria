@@ -320,7 +320,7 @@ fn main() {
                 println!("Selecciona una opción:");
                 println!("1. Ver vehículos disponibles");
                 println!("2. Comprar vehículo");
-                println!("3. Ver historial de compras");
+                println!("3. Ver historial de ventas");
                 println!("4. Salir");
         
                 let mut input = String::new();
